@@ -1,52 +1,199 @@
 .material-symbols-outlined {
+  display: inline-block;
   font-family: 'Material Symbols Outlined';
   font-variation-settings:
     'FILL' 0,
-    'wght' 300,
+    'wght' 400,
     'GRAD' 0,
-    'opsz' 20;
+    'opsz' 24;
   line-height: 1;
+  vertical-align: middle;
 }
 
-.hazard-pattern {
-  background: repeating-linear-gradient(
-    45deg,
-    rgba(0, 35, 102, 0.05),
-    rgba(0, 35, 102, 0.05) 10px,
-    transparent 10px,
-    transparent 20px
-  );
+.perspective-grid {
+  background-image:
+    linear-gradient(to right, rgba(0, 17, 58, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 17, 58, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-.heading-serif {
-  font-family: 'Playfair Display', serif;
-  letter-spacing: -0.01em;
+.blueprint-bg {
+  background-image: radial-gradient(circle, #e5eeff 1px, transparent 1px);
+  background-size: 24px 24px;
 }
 
-.nav-link {
-  position: relative;
+.blueprint-line {
+  background-image:
+    linear-gradient(to right, #d3e4fe 1px, transparent 1px),
+    linear-gradient(to bottom, #d3e4fe 1px, transparent 1px);
+  background-size: 120px 120px;
 }
 
-.nav-link::after {
-  background-color: #00113a;
-  bottom: -4px;
-  content: '';
-  height: 1px;
-  left: 0;
-  position: absolute;
-  transition: width 0.3s ease;
-  width: 0;
+.project-card:hover .project-image {
+  transform: scale(1.05);
 }
 
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
+.project-image {
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.section-divider {
-  background: linear-gradient(to right, #757682 33%, rgba(255, 255, 255, 0) 0%);
-  background-position: bottom;
-  background-repeat: repeat-x;
-  background-size: 3px 1px;
-  height: 1px;
+.text-shadow-sm {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.page-heading-section {
+  align-items: center;
+  display: flex;
+  min-height: 420px;
+}
+
+.page-heading-section > * {
+  animation: pageHeadingIn 900ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.page-heading-section::after {
+  animation: pageHeadingLine 950ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.hero-slide-bg {
+  opacity: 0;
+  transform: scale(1.045);
+  transition:
+    opacity 1100ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 7000ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.hero-slide-bg-active {
+  opacity: 0.24;
+  transform: scale(1);
+  z-index: 1;
+}
+
+.hero-slide-content {
+  animation: heroContentIn 850ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.section-reveal {
+  opacity: 0;
+  transition:
+    opacity 850ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 850ms cubic-bezier(0.16, 1, 0.3, 1),
+    clip-path 950ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform, clip-path;
+}
+
+.reveal-up {
+  transform: translate3d(0, 44px, 0);
+}
+
+.reveal-left {
+  transform: translate3d(-48px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(48px, 0, 0);
+}
+
+.reveal-zoom {
+  transform: scale(0.96);
+}
+
+.reveal-clip {
+  clip-path: inset(0 0 100% 0);
+  transform: translate3d(0, 16px, 0);
+}
+
+.reveal-skew {
+  transform: translate3d(0, 36px, 0) skewY(1.5deg);
+}
+
+.section-reveal.is-visible {
+  clip-path: inset(0 0 0 0);
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1) skewY(0deg);
+}
+
+.quote-nav-button {
+  align-items: center;
+  display: inline-flex;
+  height: 44px;
+  justify-content: center;
+  min-width: 168px;
+  padding: 0 32px;
+}
+
+@keyframes heroContentIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pageHeadingIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes pageHeadingLine {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide-bg,
+  .hero-slide-content,
+  .page-heading-section > *,
+  .page-heading-section::after,
+  .section-reveal {
+    animation: none;
+    clip-path: none;
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
+.form-input-focus:focus {
+  border-bottom: 2px solid #00113a;
+  outline: none;
+}
+
+.step-active {
+  border-color: #00113a;
+  color: #00113a;
+}
+
+.step-inactive {
+  border-color: #c5c6d2;
+  color: #757682;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f8f9ff;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #00113a;
 }

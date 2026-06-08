@@ -1,3 +1,5 @@
+import PageHero from './PageHero'
+
 type PageIntroProps = {
   copy: string
   eyebrow: string
@@ -6,16 +8,13 @@ type PageIntroProps = {
 
 function PageIntro({ copy, eyebrow, title }: PageIntroProps) {
   return (
-    <main className="min-h-[64vh] bg-surface px-6 md:px-margin-desktop py-section-padding">
-      <div className="max-w-4xl">
-        <span className="font-label-sm text-primary uppercase tracking-[0.2em] block mb-6">
-          {eyebrow}
-        </span>
-        <h1 className="heading-serif text-5xl md:text-7xl text-on-surface mb-8 leading-[1.1]">
-          {title}
-        </h1>
-        <p className="font-body-lg text-on-surface-variant max-w-2xl">{copy}</p>
-      </div>
+    <main className="pt-unit-16">
+      <PageHero
+        copy={copy}
+        eyebrow={eyebrow}
+        image="https://lh3.googleusercontent.com/aida-public/AB6AXuCqyQ-ROftUZoUtitm4x0hjdDRQU71hVpMTwcj8U7zS1w2XIGBmqQRLyYXyCOVYHD81YWZDj-zQxtFIJIf5DSTlsUpCE2qTakrXGvKUTaE4GIyDAk8mP7SGXHL-HHG-0mfCK_369XufLn8VT8SP9TbKJE8GOov3YBbbhMTjfEzto4e-TAfmpz0TsMpemXAiTZBtJM6KuwTnrRnwTs3AIUPL65iI2D3pUr9DyUjDG-dQaOO9CAxUSfoRumTciZzEG31SWJ5VI6llDdjN"
+        title={title}
+      />
     </main>
   )
 }

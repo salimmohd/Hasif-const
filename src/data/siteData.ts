@@ -1,13 +1,58 @@
+export const navItems = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' },
+  { label: 'Services', path: '/services' },
+  { label: 'Portfolio', path: '/portfolio' },
+  { label: 'Contact', path: '/contact' },
+]
+
+export const footerLinks = [
+  { label: 'Privacy Policy', path: '/privacy-policy' },
+  { label: 'Safety Standards', path: '/safety-standards' },
+  { label: 'Technical Portal', path: '/project-portal' },
+  { label: 'Careers', path: '/careers' },
+]
+
+export const resourcePages: Record<string, { eyebrow: string; title: string; copy: string }> = {
+  '/privacy-policy': {
+    eyebrow: 'Privacy Policy',
+    title: 'Clear standards for project and client information.',
+    copy: 'This page can hold the full policy for how Hasif Construction stores, reviews, and protects project information.',
+  },
+  '/safety-standards': {
+    eyebrow: 'Safety Standards',
+    title: 'Site discipline begins before work starts.',
+    copy: 'Safety documentation, compliance references, and field procedures can be collected here.',
+  },
+  '/terms': {
+    eyebrow: 'Terms of Service',
+    title: 'Terms for working with Hasif Construction.',
+    copy: 'Commercial terms, site terms, and legal references can be expanded on this page.',
+  },
+  '/cookies': {
+    eyebrow: 'Cookies',
+    title: 'Cookie preferences and site notices.',
+    copy: 'Cookie disclosures and privacy settings can be managed here.',
+  },
+  '/project-portal': {
+    eyebrow: 'Technical Portal',
+    title: 'A dedicated entry point for active builds.',
+    copy: 'Portal access, project updates, safety logs, and document workflows can be connected to this route.',
+  },
+  '/careers': {
+    eyebrow: 'Careers',
+    title: 'Build serious work with serious people.',
+    copy: 'Open roles, field teams, and engineering opportunities can be published here.',
+  },
+  '/global-offices': {
+    eyebrow: 'Global Offices',
+    title: 'Precision remains constant across every coordinate.',
+    copy: 'Regional office information and support channels can be collected here as Hasif Construction expands.',
+  },
+}
+
 export const heroImage =
   'https://lh3.googleusercontent.com/aida-public/AB6AXuDETrv_QEDgtCH7eNVwDIMatbI-W0SAXd50JXN0F-wTjkbimpQRE31wE4tOTETlESmwTsTA27KNcvAhqpQs6Z9F6tq0CGf0-yGFjI26w7KaOVfIaGe-jRKMsq9lvSEyx1lNK8Wy59ca_VY8L2oC0XnmjK2XrM9y6vAtLcrl1WdLm85b2cASCDCjPxCE6NXryJdVTzE_akNhBjyWSrn2vg4LQPMsJaHUwpjLwl-OQ2B5U4rbi3gtsTT2WGgROqaKKHj3rB-0wy_w4Zus'
-
-export const navItems = [
-  { label: 'HOME', path: '/' },
-  { label: 'SERVICES', path: '/services' },
-  { label: 'PORTFOLIO', path: '/portfolio' },
-  { label: 'ABOUT', path: '/about' },
-  { label: 'CONTACT', path: '/contact' },
-]
 
 export const services = [
   {
@@ -54,36 +99,3 @@ export const projects = [
     alt: 'A massive highway bridge under construction, showing reinforced concrete pillars and heavy machinery.',
   },
 ]
-
-export const resourcePages: Record<string, { eyebrow: string; title: string; copy: string }> = {
-  '/privacy-policy': {
-    eyebrow: 'Privacy Policy',
-    title: 'Clear standards for project and client information.',
-    copy: 'This page can hold the full policy for how Hasif Construction stores, reviews, and protects project information.',
-  },
-  '/safety-standards': {
-    eyebrow: 'Safety Standards',
-    title: 'Site discipline begins before work starts.',
-    copy: 'Safety documentation, compliance references, and field procedures can be collected here.',
-  },
-  '/project-portal': {
-    eyebrow: 'Project Portal',
-    title: 'A dedicated entry point for active builds.',
-    copy: 'Portal access, project updates, and document workflows can be connected to this route.',
-  },
-  '/careers': {
-    eyebrow: 'Careers',
-    title: 'Build serious work with serious people.',
-    copy: 'Open roles, field teams, and engineering opportunities can be published here.',
-  },
-  '/terms': {
-    eyebrow: 'Terms',
-    title: 'Terms for working with Hasif Construction.',
-    copy: 'Commercial terms, site terms, and legal references can be expanded on this page.',
-  },
-  '/cookies': {
-    eyebrow: 'Cookies',
-    title: 'Cookie preferences and site notices.',
-    copy: 'Cookie disclosures and privacy settings can be managed here.',
-  },
-}
