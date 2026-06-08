@@ -1,0 +1,48 @@
+:root {
+  color: #0b1c30;
+  background: #f8f9ff;
+  font-family: Montserrat, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background: #f8f9ff;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #f8f9ff;
+  margin: 0;
+  min-width: 320px;
+}
+
+button,
+a {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  border-radius: 0;
+  cursor: pointer;
+}
+
+img {
+  display: block;
+}
+
+#root {
+  min-height: 100svh;
+  width: 100%;
+}
